@@ -29,8 +29,8 @@
       <section class="three-col-grid">
         <article class="grid-item">
           <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php" method="post">
-          <p>Product Name: <p>
-             <label for="id">product1</label>
+          <p>Product Name: Kitchen Stone<p>
+             <input type="text" value="kitchenstone" id="id" name="id" hidden>
             <p></p>
         <p><label for="option">Color: </label>
          <select id="option" name="option">
@@ -40,13 +40,14 @@
         </select></p>
               <p></p>
 	<input type="button" value="-" onclick="minus()">
-  <input type="text" value="1" id="qty">
-  <input type="button" value="+" onclick="plus()">
+   <label for="qty"><input type="text" value="1" id="qty" name="qty"></label>
+  <input type="button" value="+" onclick="plus()"
               <p></p>
               <script src="script.js"></script>
               <p>Price: <p>
                 <p></p>
                 <input type="submit" value="Submit">
+        </form>
         </article>
         <article class="grid-item"><img src='../../media/MSBStone-img(3).jpg' width="330" height="230" alt= "Stonebench with plate of poached eggs on toast."></article>
       </section>
