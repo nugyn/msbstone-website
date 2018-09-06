@@ -28,7 +28,7 @@
     <div class ="l-wrap">
       <section class="three-col-grid">
         <article class="grid-item">
-          <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php" method="post">
+          <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php" method="post" onsubmit="return submitValue()">
           <p>Product Name: Kitchen Stone<p>
              <input type="text" value="kitchenstone" id="id" name="id" hidden>
             <p></p>
@@ -43,11 +43,11 @@
    <label for="qty"><input type="text" value="1" id="qty" name="qty"></label>
   <input type="button" value="+" onclick="plus()"
               <p></p>
-              <script src="script.js"></script>
               <p>Price: <p>
                 <p></p>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" onclick="submitValue()">
         </form>
+        <script src="script.js"></script>
         </article>
         <article class="grid-item"><img src='../../media/MSBStone-img(3).jpg' width="330" height="230" alt= "Stonebench with plate of poached eggs on toast."></article>
       </section>

@@ -1,5 +1,6 @@
 var qty = 1;
 var result = document.getElementById("qty");
+var final = document.getElementById("result");
 
 function plus(){
   qty++;
@@ -11,4 +12,15 @@ function minus(){
   qty--;
   result.value = qty;
  }
+}
+
+function submitValue(){
+  if(typeof qty != Number || qty <= 0){
+    alert("Quantity must be a number bigger than 0!");
+    return false;
+  }
+  else{
+    return true;
+  }
+
 }
