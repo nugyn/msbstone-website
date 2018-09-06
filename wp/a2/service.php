@@ -2,6 +2,7 @@
 <html lang='en'>
   <head>
     <link rel="stylesheet" href="css/style.css">
+
     <meta charset="utf-8">
     <title>Assignment 2</title>
 
@@ -27,22 +28,27 @@
     <div class ="l-wrap">
       <section class="three-col-grid">
         <article class="grid-item">
-          <p>About Us!<p>
-            <p>moretext</p>
-            <p>About Us!<p>
-              <p>moretext</p>
-              <p>About Us!<p>
-                <p>moretext</p>
+          <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php" method="post">
+          <p>Product Name: <p>
+             <label for="id">product1</label>
+            <p></p>
+        <p><label for="option">Color: </label>
+         <select id="option" name="option">
+          <option value="color1">Color 1</option>
+          <option value="color2">Color 2</option>
+          <option value="color3">Color 3</option>
+        </select></p>
+              <p></p>
+	<input type="button" value="-" onclick="minus()">
+  <input type="text" value="1" id="qty">
+  <input type="button" value="+" onclick="plus()">
+              <p></p>
+              <script src="script.js"></script>
+              <p>Price: <p>
+                <p></p>
+                <input type="submit" value="Submit">
         </article>
         <article class="grid-item"><img src='../../media/MSBStone-img(3).jpg' width="330" height="230" alt= "Stonebench with plate of poached eggs on toast."></article>
-        <article class="grid-item"><img src='../../media/MSBStone-img(3).jpg' width="330" height="230" alt= "Stonebench with plate of poached eggs on toast."></article>
-        <article class="grid-item"><p>About Us!<p>
-          <p>moretext</p>
-          <p>About Us!<p>
-            <p>moretext</p>
-            <p>About Us!<p>
-              <p>moretext</p>
-            </article>
       </section>
 
 

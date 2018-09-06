@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="utf-8">
     <title>Assignment 2</title>
 
@@ -27,15 +27,15 @@
     <div class ="l-wrap">
       <section class="three-col-grid">
         <article class="grid-item">
-          <p>About Us!<p>
+          <p>About Us!!! LAM CHANGES<p>
             <p>moretext</p>
             <p>About Us!<p>
               <p>moretext</p>
               <p>About Us!<p>
                 <p>moretext</p>
         </article>
-        <article class="grid-item"><img src='../../media/MSBStone-img(3).jpg' width="330" height="230" alt= "Stonebench with plate of poached eggs on toast."></article>
-        <article class="grid-item"><img src='../../media/MSBStone-img(3).jpg' width="330" height="230" alt= "Stonebench with plate of poached eggs on toast."></article>
+        <article class="grid-item"><img src='../../media/MSBStone-img(3).jpg'  alt= "Stonebench with plate of poached eggs on toast."></article>
+        <article class="grid-item"><img src='../../media/MSBStone-img(3).jpg'  alt= "Stonebench with plate of poached eggs on toast."></article>
         <article class="grid-item"><p>About Us!<p>
           <p>moretext</p>
           <p>About Us!<p>
