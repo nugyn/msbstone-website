@@ -45,7 +45,7 @@
               <p></p>
               <p>Price: <p>
                 <p></p>
-                <input type="submit" value="Submit" onclick="submitValue()">
+                <input type="submit" value="Add to cart">
         </form>
         <script src="script.js"></script>
         </article>
