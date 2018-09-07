@@ -216,13 +216,14 @@ nav ul li a:hover {
   margin-left: auto;
   margin-right: auto;
 }
-form {
+
+.loginForm {
     border: 3px solid #251120;
     border-radius: 4px;
 }
 
 
-input[type=text], input[type=password] {
+.loginInput {
     width: 100%;
     border-radius: 4px;
     padding: 14px 20px;
@@ -233,7 +234,7 @@ input[type=text], input[type=password] {
 }
 
 
-button {
+.duyButton {
     background-color: #251120;
     color: white;
     padding: 14px 20px;
@@ -243,10 +244,10 @@ button {
     width: 100%;
 }
 
-
-button:hover {
+.duyButton:hover {
     opacity: 0.8;
 }
+
 
 .cancelbtn {
     width: auto;
@@ -275,9 +276,11 @@ span.psw {
     .cancelbtn {
         width: 100%;
     }
+}
+
 .alignRight {
   float: right;
-  font-size: 150%;
+  font-size: 150% !important;
   font-style: italic;
 }
 
@@ -299,6 +302,7 @@ span.psw {
 
 .descriptionText{
     font-size: 150%;
+    font-style: italic;
     display: flex;
     justify-content: center;
 }
