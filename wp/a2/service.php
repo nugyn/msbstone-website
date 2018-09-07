@@ -29,7 +29,8 @@
       <section class="three-col-grid">
         <article class="grid-item">
           <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php" method="post" onsubmit="return submitValue()">
-          <p>Product Name: Kitchen Stone<p>
+          <p>Product Name: </p>
+            <div>Kitchen Stone</div>
              <input type="text" value="kitchenstone" id="id" name="id" hidden>
             <p></p>
         <p><label for="option">Color: </label>
