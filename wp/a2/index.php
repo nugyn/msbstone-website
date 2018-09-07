@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
     <title>Assignment 2</title>
 
@@ -24,24 +24,38 @@
     </nav>
   </header>
     <main>
-    <div class ="l-wrap">
-      <section class="three-col-grid">
-        <article class="grid-item">
-          <p>About Us!!! LAM CHANGES<p>
-            <p>moretext</p>
-            <p>About Us!<p>
-              <p>moretext</p>
-              <p>About Us!<p>
-                <p>moretext</p>
+    <div class ="layout">
+      <section class="grid">
+        <article class="grid-content">
+          <p> Welcome to MSB Stone.</p>
+          <p> Here at MSB Stone, our highly skilled team with 30 years experience of installation and fabrication of Stonebench tops and Vanities.</p>
+          <p> Our mission is to provide long-lasting, quality products, executed witih Precision.</p>
+          <p> No job is too small or big, and we will always garuntee a finished product to your satisfaction.</p>
         </article>
-        <article class="grid-item"><img src='../../media/MSBStone-img(3).jpg'  alt= "Stonebench with plate of poached eggs on toast."></article>
-        <article class="grid-item"><img src='../../media/MSBStone-img(3).jpg'  alt= "Stonebench with plate of poached eggs on toast."></article>
-        <article class="grid-item"><p>About Us!<p>
-          <p>moretext</p>
-          <p>About Us!<p>
-            <p>moretext</p>
-            <p>About Us!<p>
-              <p>moretext</p>
+        <article class="grid-content"><img src='../../media/MSBStone-img(3).jpg' alt= "Stonebench with plate of poached eggs on toast."></article>
+        <article class="grid-content"> Factory Opening Hours:
+        <table width = 100%>
+          <tr>
+            <td>Mondayy:</td>
+            <td>Tuesday:</td>
+            <td>Wednesday:</td>
+            <td>Thursday:</td>
+            <td>Friday:</td>
+            <td>Saturday:</td>
+            <td>Sunday:</td>
+          </tr>
+          <tr>
+            <td>9:00am to 5:00pm</td>
+            <td>9:00am to 5:00pm</td>
+            <td>9:00am to 5:00pm</td>
+            <td>9:00am to 5:00pm</td>
+            <td>9:00am to 5:00pm</td>
+            <td>9:00am to 5:00pm</td>
+            <td>9:00am to 5:00pm</td>
+          </tr>
+        </table>
+      </article>
+        <article class="grid-content">
             </article>
       </section>
 
