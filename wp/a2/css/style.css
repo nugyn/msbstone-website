@@ -187,11 +187,11 @@ nav ul li a:hover {
   width: 100%;
 }
 
-/* .grid-content td{
+.servicetd{
    font-weight: bold;
   font-size: 150%;
 }
-*/
+
 
 .qtybutton{
   background-color: #251120;
@@ -203,9 +203,19 @@ nav ul li a:hover {
     font-size: 20px;
 }
 
+.qtybutton:hover {
+  background-color: #B72593;
+  color: white;
+}
+
+.qtybutton:active {
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
+}
+
 .qtyfield{
       width: 30px;
-      padding: relative;
+      padding: 8px 0px;
       margin: 8px 0;
       display: inline-block;
       border: 1px solid #ccc;
@@ -221,7 +231,29 @@ nav ul li a:hover {
 }
 
 .alignRight {
-  font-weight: normal !important;
   float: right;
+  font-size: 150%;
   font-style: italic;
+}
+
+.submitButton{
+  float:right;
+  color: black;
+  padding: 10px 25px;
+  background-image: url("shoppingcart.jpg");
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  background-color: #B8BAB9;
+}
+
+.submitButton:active{
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
+}
+
+.descriptionText{
+    font-size: 150%;
+    display: flex;
+    justify-content: center;
 }
