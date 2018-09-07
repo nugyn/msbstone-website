@@ -28,29 +28,38 @@
     <div class ="layout">
       <section class="grid">
         <article class="grid-content">
-          <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php" method="post" onsubmit="return submitValue()">
-          <p>Product Name: </p>
-            <div>Kitchen Stone</div>
+          <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php" method="post" onsubmit="return submitValue();">
+            <table>
+              <tr><td class="servicetd">Product Name: </td>
+                <td class="alignRight">Kitchen Stone</td></tr>
              <input type="text" value="kitchenstone" id="id" name="id" hidden>
-            <p></p>
-        <p><label for="option">Color: </label>
-         <select id="option" name="option">
-          <option value="color1">Color 1</option>
-          <option value="color2">Color 2</option>
-          <option value="color3">Color 3</option>
-        </select></p>
-              <p></p>
-	<input type="button" value="-" onclick="minus()">
-   <label for="qty"><input type="text" value="1" id="qty" name="qty"></label>
-  <input type="button" value="+" onclick="plus()"
-              <p></p>
-              <p>Price: <p>
-                <p></p>
-                <input type="submit" value="Add to cart">
+
+             <tr><td class="servicetd"><label for="option">Color: </label></td>
+              <td class="alignRight"><select id="option" name="option" style="font-style: italic;">
+          <option value="eminentwhitepearl" >Eminent White Pearl</option>
+          <option value="liquidplatinum" >Liquid Platinum</option>
+          <option value="nebulagraypearl">Nebula Gray Pearl</option>
+        </select></td></tr>
+        <tr><td class="servicetd">Quantity: </td>
+    <td class="alignRight">
+	<input type="button" class="qtybutton" value="-" onclick="minus()">
+   <label for="qty"><input type="text" class="qtyfield" value="1" id="qty" name="qty"></label>
+  <input type="button" class="qtybutton" value="+" onclick="plus()"></td></tr>
+            <tr><td class="servicetd">Price: </td>
+            <td class="alignRight">$300.00 (for a standard kitchen)</td></tr>
+
+            <tr><td></td>
+              <td class="allignRight">
+              <input type="submit" value="Add to cart" class="submitButton"></td></tr>
+        </table>
         </form>
         <script src="script.js"></script>
         </article>
-        <article class="grid-content"><img src='../../media/MSBStone-img(3).jpg' width="330" height="230" alt= "Stonebench with plate of poached eggs on toast."></article>
+        <article class="grid-content"><img src='../../media/MSBStone-img(3).jpg' width="330" height="230" alt= "Stonebench with Eminent White Pearl color"></article>
+        <article class="grid-content">
+        <span class="descriptionText"><b>Description: </b> Crafted from one of the most precious marble stones under the artistic hands of our crafting master, this kitchen bench model will lighten up your family kitchen with a bright and shiny color.</span>
+        </article>
+
       </section>
 
 
