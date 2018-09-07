@@ -167,11 +167,6 @@ nav ul li a:hover {
   width: 100%;
 }
 
-/* .grid-content td{
-   font-weight: bold;
-  font-size: 150%;
-}
-*/
 
 .qtybutton{
   background-color: #251120;
@@ -183,9 +178,19 @@ nav ul li a:hover {
     font-size: 20px;
 }
 
+.qtybutton:hover {
+  background-color: #B72593;
+  color: white;
+}
+
+.qtybutton:active {
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
+}
+
 .qtyfield{
       width: 30px;
-      padding: relative;
+      padding: 8px 0px;
       margin: 8px 0;
       display: inline-block;
       border: 1px solid #ccc;
@@ -206,13 +211,14 @@ nav ul li a:hover {
   margin-left: auto;
   margin-right: auto;
 }
-form {
+
+.loginForm {
     border: 3px solid #251120;
     border-radius: 4px;
 }
 
 
-input[type=text], input[type=password] {
+.loginInput {
     width: 100%;
     border-radius: 4px;
     padding: 14px 20px;
@@ -767,7 +773,7 @@ input[type=text], input[type=password] {
 }
 
 
-button {
+.duyButton {
     background-color: #251120;
     color: white;
     padding: 14px 20px;
@@ -777,10 +783,10 @@ button {
     width: 100%;
 }
 
-
-button:hover {
+.duyButton:hover {
     opacity: 0.8;
 }
+
 
 .cancelbtn {
     width: auto;
@@ -809,8 +815,33 @@ span.psw {
     .cancelbtn {
         width: 100%;
     }
+}
+
 .alignRight {
-  font-weight: normal !important;
   float: right;
+  font-size: 150% !important;
   font-style: italic;
+}
+
+.submitButton{
+  float:right;
+  color: black;
+  padding: 10px 25px;
+  background-image: url("shoppingcart.jpg");
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  background-color: #B8BAB9;
+}
+
+.submitButton:active{
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
+}
+
+.descriptionText{
+    font-size: 150%;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
 }

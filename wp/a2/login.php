@@ -28,22 +28,19 @@
     <div class ="content">
       <section class="grid">
         <div class ="login">
-        <form action="processing.php">
+        <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php?ref=login" class="loginForm" method="post">
   <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <label for="email"></label>
+    <input type="text" placeholder="Email" name="email" class="loginInput" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <label for="password"></label>
+    <input type="password" placeholder="Password" name="password"  class="loginInput" required>
+    <button type="submit" class ="duyButton">Login</button>
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
   </div>
 
 
-  <div class="container" >
+  <div class="container">
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
