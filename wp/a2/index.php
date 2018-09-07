@@ -27,7 +27,7 @@
     <div class ="layout">
       <section class="grid">
         <article class="grid-content">
-          <p> Welcome to MSB Stone.</p>
+          <p> Welcome to MSB Stone. Changes made by me. </p>
           <p> Here at MSB Stone, our highly skilled team with 30 years experience of installation and fabrication of Stonebench tops and Vanities.</p>
           <p> Our mission is to provide long-lasting, quality products, executed witih Precision.</p>
           <p> No job is too small or big, and we will always garuntee a finished product to your satisfaction.</p>
