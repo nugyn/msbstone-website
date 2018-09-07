@@ -26,23 +26,10 @@
     <main>
     <div class ="layout">
       <section class="grid">
-        <article class="grid-content">
-          <p>About Us!<p>
-            <p>moretext</p>
-            <p>About Us!<p>
-              <p>moretext</p>
-              <p>About Us!<p>
-                <p>moretext</p>
-        </article>
-        <article class="grid-content"><img src='../../media/MSBStone-img(3).jpg' width="330" height="230" alt= "Stonebench with plate of poached eggs on toast."></article>
-        <article class="grid-content"><img src='../../media/MSBStone-img(3).jpg' width="330" height="230" alt= "Stonebench with plate of poached eggs on toast."></article>
-        <article class="grid-content"><p>About Us!<p>
-          <p>moretext</p>
-          <p>About Us!<p>
-            <p>moretext</p>
-            <p>About Us!<p>
-              <p>moretext</p>
-            </article>
+        <article class="grid-content"><img src='../../media/MSBClassic.jpg' alt= "Classic Styled Kitchen Bench"></article>
+        <article class="grid-content"><img src='../../media/MSBStone-img(3).jpg'  alt= "Marble Stonebench"></article>
+        <article class="grid-content"><img src='../../media/MSBModern.jpg'  alt= "Modern Lifestyle Kitchen"></article>
+        <article class="grid-content"><img src='../../media/MSBWood.jpg' alt= "Luxurious Wooden Style">  </article>
       </section>
 
 

@@ -31,8 +31,8 @@
           <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php" method="post" onsubmit="return submitValue();">
             <table>
               <tr><td class="servicetd">Product Name: </td>
-                <td class="alignRight">Kitchen Stone</td></tr>
-             <input type="text" value="kitchenstone" id="id" name="id" hidden>
+                <td class="alignRight">Marble Stone</td></tr>
+             <input type="text" value="marblestone" id="id" name="id" hidden>
 
              <tr><td class="servicetd"><label for="option">Color: </label></td>
               <td class="alignRight"><select id="option" name="option" style="font-style: italic;">
