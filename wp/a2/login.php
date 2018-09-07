@@ -30,14 +30,11 @@
         <div class ="login">
         <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php?ref=login" class="loginForm" method="post">
   <div class="container">
-    <label for="uname"></label>
-    <input type="text" placeholder="Username" name="uname" class="loginInput" required>
+    <label for="email"></label>
+    <input type="text" placeholder="Email" name="email" class="loginInput" required>
 
-    <label for="psw"></label>
-    <input type="password" placeholder="Password" name="psw"  class="loginInput" required>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+    <label for="password"></label>
+    <input type="password" placeholder="Password" name="password"  class="loginInput" required>
     <button type="submit" class ="duyButton">Login</button>
 
   </div>
