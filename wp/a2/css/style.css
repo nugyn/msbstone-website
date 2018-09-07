@@ -183,19 +183,44 @@ nav ul li a:hover {
   float: left;
 }
 
-.grid-content p{
-  text-align:left;
-  font-size: 20px;
+.grid-content table{
+  width: 100%;
 }
 
-.grid-content div{
-  text-align:right;
-  vertical-align: right;
-  font-size: 20px;
+.grid-content td{
+   font-weight: bold;
+  font-size: 150%;
 }
 
+.qtybutton{
+  background-color: #251120;
+    border: outset  ;
+    color: white;
+    padding: 120% relative ;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.qtyfield{
+      width: 30px;
+      padding: 120% relative;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      text-align:center;
+      font-style: italic;
+}
 
 .grid-content img{
     width: 100%;
     height: 100%;
+}
+
+.alignRight {
+  font-weight: normal !important;
+  float: right;
+  font-style: italic;
 }

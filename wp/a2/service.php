@@ -28,25 +28,28 @@
     <div class ="layout">
       <section class="grid">
         <article class="grid-content">
-          <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php" method="post" onsubmit="return submitValue()">
-          <p>Product Name: </p>
-            <div>Kitchen Stone</div>
+          <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php" method="post" onsubmit="return submitValue();">
+            <table>
+              <tr><td>Product Name: </td>
+                <td class="alignRight">Kitchen Stone</td></tr>
              <input type="text" value="kitchenstone" id="id" name="id" hidden>
-            <p></p>
-        <p><label for="option">Color: </label>
-         <select id="option" name="option">
-          <option value="color1">Color 1</option>
-          <option value="color2">Color 2</option>
-          <option value="color3">Color 3</option>
-        </select></p>
-              <p></p>
-	<input type="button" value="-" onclick="minus()">
-   <label for="qty"><input type="text" value="1" id="qty" name="qty"></label>
-  <input type="button" value="+" onclick="plus()"
-              <p></p>
-              <p>Price: <p>
-                <p></p>
-                <input type="submit" value="Add to cart">
+
+             <tr><td><label for="option">Color: </label></td>
+              <td class="alignRight"><select id="option" name="option" class="alignRight">
+          <option value="eminentwhitepearl" class="alignRight">Eminent White Pearl</option>
+          <option value="liquidplatinum" class="alignRight">Liquid Platinum</option>
+          <option value="nebulagraypearl" class="alignRight">Nebula Gray Pearl</option>
+        </select></td></tr>
+        <tr><td>Quantity: </td>
+    <td class="alignRight">
+	<input type="button" class="qtybutton" value="-" onclick="minus()">
+   <label for="qty"><input type="text" class="qtyfield" value="1" id="qty" name="qty"></label>
+  <input type="button" class="qtybutton" value="+" onclick="plus()"></td></tr>
+            <tr><td>Price: </td>
+            <td class="alignRight">$300.00 (for a standard kitchen)</td></tr>
+
+            <tr><td><input type="submit" value="Add to cart"></td></tr>
+        </table>
         </form>
         <script src="script.js"></script>
         </article>
