@@ -167,10 +167,11 @@ nav ul li a:hover {
   width: 100%;
 }
 
-.grid-content td{
+/* .grid-content td{
    font-weight: bold;
   font-size: 150%;
 }
+*/
 
 .qtybutton{
   background-color: #251120;
@@ -184,7 +185,7 @@ nav ul li a:hover {
 
 .qtyfield{
       width: 30px;
-      padding: 120% relative;
+      padding: relative;
       margin: 8px 0;
       display: inline-block;
       border: 1px solid #ccc;
