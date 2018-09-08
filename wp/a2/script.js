@@ -13,12 +13,17 @@ function minus(){
  }
 }
 
+function checkinput(){
+  result.value = qty;
+}
+
 function submitValue(){
-  if(typeof qty != number || qty <= 0){
-    alert("Quantity must be a number bigger than 0!");
-    return false;
-  }
-  else{
+  if(typeof Number(result.value) == "number" && result.value > 0 && Number.isInteger(Number(result.value)))
+  {
     return true;
+  }
+  else {
+    alert("Quantity must be a integer bigger than 0!");
+    return false;
   }
 }

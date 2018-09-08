@@ -2,7 +2,6 @@
 <html lang='en'>
   <head>
     <link rel="stylesheet" href="css/style.css">
-
     <meta charset="utf-8">
     <title>Assignment 2</title>
 
@@ -43,7 +42,7 @@
         <tr><td class="servicetd">Quantity: </td>
     <td class="alignRight">
 	<input type="button" class="qtybutton" value="-" onclick="minus()">
-   <label for="qty"><input type="text" class="qtyfield" value="1" id="qty" name="qty"></label>
+   <label for="qty"><input type="text" class="qtyfield" value="1" id="qty" name="qty" onsubmit="checkinput()"></label>
   <input type="button" class="qtybutton" value="+" onclick="plus()"></td></tr>
             <tr><td class="servicetd">Price: </td>
             <td class="alignRight">$300.00 (for a standard kitchen)</td></tr>
@@ -53,8 +52,8 @@
               <input type="submit" value="Add to cart" class="submitButton"></td></tr>
         </table>
         </form>
-        <script src="script.js"></script>
         </article>
+        <script type="text/javascript" src="script.js"></script>
         <article class="grid-content"><img src='../../media/MSBStone-img(3).jpg' width="330" height="230" alt= "Stonebench with Eminent White Pearl color"></article>
         <article class="grid-content">
         <span class="descriptionText"><b>Description: </b> Crafted from one of the most precious marble stones under the artistic hands of our crafting master, this kitchen bench model will lighten up your family kitchen with a bright and shiny texture.</span>
