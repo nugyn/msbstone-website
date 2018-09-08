@@ -54,7 +54,7 @@
         </form>
         </article>
         <script type="text/javascript" src="script.js"></script>
-        <article class="grid-content"><img src='../../media/MSBStone-img(3).jpg' width="330" height="230" alt= "Stonebench with Eminent White Pearl color"></article>
+        <article class="grid-content"><img src='../../media/MSBStone-img(3).jpg' alt= "Stonebench with Eminent White Pearl color"></article>
         <article class="grid-content">
         <span class="descriptionText"><b>Description: </b> Crafted from one of the most precious marble stones under the artistic hands of our crafting master, this kitchen bench model will lighten up your family kitchen with a bright and shiny texture.</span>
         </article>
