@@ -1,6 +1,7 @@
 <?php
   session_start();
   include_once('tools.php');
+
   topModule('Assignment 3');
 ?>
 
@@ -48,4 +49,5 @@
 
   <?php
     endModule();
+    
   ?>
