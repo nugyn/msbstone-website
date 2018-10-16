@@ -795,6 +795,10 @@ input[type=text], input[type=password] {
     background-color: #251120;
 }
 
+.cancelbtn:hover {
+    opacity: 0.8;
+}
+
 
 .container {
     padding: 18px;
