@@ -2,7 +2,6 @@
 <html lang='en'>
   <head>
     <link rel="stylesheet" href="css/style.css">
-
     <meta charset="utf-8">
     <title>Assignment 2</title>
 
@@ -14,7 +13,7 @@
 
   <body>
     <header>
-    <img src='../../media/MSBStone-logo.png' = alt ='Melbourne Stone Benchtops'/>
+    <img src='../../media/MSBStone-logo.jpg' = alt ='Melbourne Stone Benchtops'/>
 
     <nav class= "cool">
       <ul>
@@ -28,29 +27,37 @@
     <div class ="layout">
       <section class="grid">
         <article class="grid-content">
-          <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php" method="post" onsubmit="return submitValue()">
-          <p>Product Name: </p>
-            <div>Kitchen Stone</div>
-             <input type="text" value="kitchenstone" id="id" name="id" hidden>
-            <p></p>
-        <p><label for="option">Color: </label>
-         <select id="option" name="option">
-          <option value="color1">Color 1</option>
-          <option value="color2">Color 2</option>
-          <option value="color3">Color 3</option>
-        </select></p>
-              <p></p>
-	<input type="button" value="-" onclick="minus()">
-   <label for="qty"><input type="text" value="1" id="qty" name="qty"></label>
-  <input type="button" value="+" onclick="plus()"
-              <p></p>
-              <p>Price: <p>
-                <p></p>
-                <input type="submit" value="Add to cart">
+          <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php" method="post" onsubmit="return submitValue();">
+            <table>
+              <tr><td class="servicetd">Product Name: </td>
+                <td class="alignRight">Marble Stone</td></tr>
+             <input type="text" value="marblestone" id="id" name="id" hidden>
+
+             <tr><td class="servicetd"><label for="option">Color: </label></td>
+              <td class="alignRight"><select id="option" name="option" style="font-style: italic;">
+          <option value="eminentwhitepearl" >Eminent White Pearl</option>
+          <option value="liquidplatinum" >Liquid Platinum</option>
+          <option value="nebulagraypearl">Nebula Gray Pearl</option>
+        </select></td></tr>
+        <tr><td class="servicetd">Quantity: </td>
+    <td class="alignRight">
+	<input type="button" class="qtybutton" value="-" onclick="minus()">
+   <label for="qty"><input type="text" class="qtyfield" value="1" id="qty" name="qty" onsubmit="checkinput()"></label>
+  <input type="button" class="qtybutton" value="+" onclick="plus()"></td></tr>
+            <tr><td class="servicetd">Price: </td>
+            <td class="alignRight">$300.00 (for a standard kitchen)</td></tr>
+
+            <tr><td></td>
+              <td class="allignRight">
+              <input type="submit" value="Add to cart" class="submitButton"></td></tr>
+        </table>
         </form>
-        <script src="script.js"></script>
         </article>
-        <article class="grid-content"><img src='../../media/MSBStone-img(3).jpg' width="330" height="230" alt= "Stonebench with plate of poached eggs on toast."></article>
+        <script type="text/javascript" src="script.js"></script>
+        <article class="grid-content"><img src='../../media/MSBStone-img(3).jpg' alt= "Stonebench with Eminent White Pearl color"></article>
+        <article class="grid-content">
+        <span class="descriptionText"><b>Description: </b> Crafted from one of the most precious marble stones under the artistic hands of our crafting master, this kitchen bench model will lighten up your family kitchen with a bright and shiny texture.</span>
+        </article>
       </section>
 
 
@@ -60,7 +67,7 @@
     <footer>
       <div>&copy;<script>
         document.write(new Date().getFullYear());
-      </script> Duy Linh Nguyen, s3429599.</div>
+      </script> Duy Linh Nguyen, s3429599. Lam Hoang Tran, s3714110</div>
       <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
       <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
     </footer>

@@ -1,51 +1,53 @@
-<!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <meta charset="utf-8">
-    <title>Assignment 3</title>
+<?php
+  session_start();
+  include_once('tools.php');
 
-    <!-- Keep wireframe.css for debugging, add your css to style.css -->
-    <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
-    <link id='stylecss' type="text/css" rel="stylesheet" href="css/style.css">
-    <script src='../wireframe.js'></script>
-    <style>
-      <?php
-        // This PHP code inserts CSS to style the "current page" link in the nav area
-        $here = $_SERVER['SCRIPT_NAME']; 
-        $bits = explode('/',$here); 
-        $filename = $bits[count($bits)-1]; 
-        echo "nav a[href$='$filename'] {
-        box-shadow: 1px 1px 1px 2px navy;
-      }";
-      ?>
-      
-    </style>
-  </head>
+  topModule('Assignment 3');
+?>
 
-  <body>
-
-    <header>
-      <div>Put company logo and name here</div>
-    </header>
-
-    <nav>
-      <div>Put website navigation links here</div>
-    </nav>
-
-    <main>
-      <article id='Website Under Construction'>
-    <!-- Creative Commons image sourced from https://pixabay.com/en/maintenance-under-construction-2422173/ and used for educational purposes only -->
-        <img src='../../media/website-under-construction.png' alt='Website Under Construction' />
+    <div class ="layout">
+      <section class="grid">
+        <article class="grid-content">
+          <p> Welcome to MSB Stone.</p>
+          <p> Here at MSB Stone, our highly skilled team with 30 years experience of installation and fabrication of Stonebench tops and Vanities.</p>
+          <p> Our mission is to provide long-lasting, quality products, executed witih Precision.</p>
+          <p> No job is too small or big, and we will always garuntee a finished product to your satisfaction.</p>
+        </article>
+        <article class="grid-content"><img src='../../media/MSBStone-img(3).jpg' alt= "Kitchen Benchtop."></article>
+        <article class="grid-content">
+          <p>Factory Opening Hours:</p>
+        <p>
+        <table width = 100%>
+          <tr>
+            <td>Mondayy:</td>
+            <td>Tuesday:</td>
+            <td>Wednesday:</td>
+            <td>Thursday:</td>
+            <td>Friday:</td>
+            <td>Saturday:</td>
+            <td>Sunday:</td>
+          </tr>
+          <tr>
+            <td>9am - 5pm</td>
+            <td>9am - 5pm</td>
+            <td>9am - 5pm</td>
+            <td>9am - 5pm</td>
+            <td>9am - 5pm</td>
+            <td>9am - 5pm</td>
+            <td>9am - 5pm</td>
+          </tr>
+        </table>
+      </p>
       </article>
-    </main>
+        <article class="grid-content">
 
-    <footer>
-      <div>&copy;<script>
-        document.write(new Date().getFullYear());
-      </script> Put your name(s), student number(s) and group name here.</div>
-      <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
-      <div>Maintain links to your <a href='products.txt'>products spreadsheet</a> and <a href='orders.txt'>orders spreadsheet</a> here. <button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
-    </footer>
-   
-  </body>
-</html>
+            </article>
+      </section>
+
+
+  </div>
+
+  <?php
+    endModule();
+    
+  ?>
