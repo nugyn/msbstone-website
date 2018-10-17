@@ -12,6 +12,7 @@
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
     <link id='stylecss' type="text/css" rel="stylesheet" href="css/style.css">
     <script src='../wireframe.js'></script>
+    <script src='../script.js'></script>
   </head>
 
   <body>
@@ -23,6 +24,7 @@
         <li><a href=index.php>Home</a></li>
         <li><a href=services.php>Services</a></li>
         <li><a href=login.php>Members</a></li>
+        <li><a href=checkout.php>Checkout</a></li>
       </ul>
     </nav>
   </header>

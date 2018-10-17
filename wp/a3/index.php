@@ -12,6 +12,7 @@
           <p> Here at MSB Stone, our highly skilled team with 30 years experience of installation and fabrication of Stonebench tops and Vanities.</p>
           <p> Our mission is to provide long-lasting, quality products, executed witih Precision.</p>
           <p> No job is too small or big, and we will always garuntee a finished product to your satisfaction.</p>
+          <p> TESTING:</p>
         </article>
         <article class="grid-content"><img src='../../media/MSBStone-img(3).jpg' alt= "Kitchen Benchtop."></article>
         <article class="grid-content">
@@ -19,7 +20,7 @@
         <p>
         <table width = 100%>
           <tr>
-            <td>Mondayy:</td>
+            <td>Monday:</td>
             <td>Tuesday:</td>
             <td>Wednesday:</td>
             <td>Thursday:</td>
@@ -49,5 +50,5 @@
 
   <?php
     endModule();
-    
+
   ?>

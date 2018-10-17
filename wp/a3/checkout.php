@@ -3,7 +3,24 @@
   include_once('tools.php');
 
   topModule('Assignment 3');
-?>
+
+if(isset($_POST['checkout']))
+{
+  $_SESSION["firstname"] = $_POST["firstname"];
+  $_SESSION["lastname"] = $_POST["middlename"];
+  $_SESSION["firstname"] = $_POST["lastname"];
+  $_SESSION["firstname"] = $_POST["email"];
+  $_SESSION["firstname"] = $_POST["address"];
+  $_SESSION["firstname"] = $_POST["city"];
+  $_SESSION["firstname"] = $_POST["state"];
+  $_SESSION["zip"] = $_POST["zip"];
+  $_SESSION["number"] = $_POST["number"];
+  header("Location: receipt.php");
+
+}
+
+
+ ?>
 
     <div class ="layout">
       <section class="grid">
@@ -11,47 +28,81 @@
           <div class="row">
     <div class="col-75">
       <div class="container">
-        <form action="/action_page.php">
+        <form name = "form" action="/action_page.php" method="post">
 
           <div class="row">
             <div class="col-50">
               <h3>Billing Address</h3>
-              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-              <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+              <label for="fname"><i class="fa fa-user"></i> First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Enter in Firstname" required>
+              <label for="fname"><i class="fa fa-user"></i> Middle Name</label>
+              <input type="text" id="fname" name="middlename" placeholder="Enter in Middlename">
+              <label for="fname"><i class="fa fa-user"></i> Last Name</label>
+              <input type="text" id="fname" name="lastname" placeholder="Enter in Firstname" required>
               <label for="email"><i class="fa fa-envelope"></i> Email</label>
-              <input type="text" id="email" name="email" placeholder="john@example.com">
+              <input type="text" id="email" name="email" placeholder="example@example.com" required>
               <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-              <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+              <input type="text" id="adr" name="address" placeholder="123 Street St" required>
               <label for="city"><i class="fa fa-institution"></i> City</label>
-              <input type="text" id="city" name="city" placeholder="New York">
+              <input type="text" id="city" name="city" placeholder="City" required>
 
               <div class="row">
                 <div class="col-50">
                   <label for="state">State</label>
-                  <input type="text" id="state" name="state" placeholder="NY">
+                  <input type="text" id="state" name="state" placeholder="State" required>
+                  <select id=state required>
+                    <option value="VIC"> Victoria </option>
+                    <option value="NSW"> New South Wales </option>
+                    <option value="QLD"> Queensland </option>
+                    <option value="NT"> Northern Territory </option>
+                    <option value="WA"> Western Australia</option>
+                    <option value="SA"> South Australia</option>
+                  </select>
                 </div>
                 <div class="col-50">
-                  <label for="zip">Zip</label>
-                  <input type="text" id="zip" name="zip" placeholder="10001">
+                  <label for="zip">Postcode</label>
+                  <input type="text" id="postcode" name="postcode" placeholder="0000" required>
                 </div>
               </div>
             </div>
+
+
 
             <div class="col-50">
               <h3>Payment</h3>
               <label for="fname">Accepted Cards</label>
               <div class="icon-container">
-                <i class="fa fa-cc-visa" style="color:navy;"></i>
-                <i class="fa fa-cc-amex" style="color:blue;"></i>
-                <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                <i class="fa fa-cc-discover" style="color:orange;"></i>
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
               </div>
-              <label for="cname">Name on Card</label>
-              <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-              <label for="ccnum">Credit card number</label>
-              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+
+
+
+
+
+              <label for="cname">Name on Card <abbr title="Required">*</abbr></label>
+              <input type="text" id="cname" name="cardname" placeholder="Cardholder Name" required>
+
+            <label for="ccNum">Card Number <abbr title="Required">*</abbr></label>
+            <input type="text" name="cardnumber" value="123" onchange= "validateCardNumber(document.form.cardnumber)">
+
+          <script>
+          function validateCardNumber(val)
+          {
+            var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+            if(val.value.match(cardno))
+                  {
+                return true;
+                  }
+                else
+                  {
+                  alert("Not a valid Visa credit card number!");
+                  return false;
+                  }
+          }
+          </script>
+
               <label for="expmonth">Exp Month</label>
-              <input type="text" id="expmonth" name="expmonth" placeholder="September">
+              <input type="text" id="expmonth" name="expmonth" placeholder="Month" required>
 
               <div class="row">
                 <div class="col-50">
@@ -71,6 +122,7 @@
           </label>
           <input type="submit" value="Continue to checkout" class="btn">
         </form>
+
       </div>
     </div>
 
@@ -96,6 +148,7 @@
 
 
   </div>
+
 
   <?php
     endModule();

@@ -1,5 +1,6 @@
 var qty = 1;
 var result = document.getElementById("qty");
+var ccNum = document.getElementById("ccNum");
 
 function plus(){
   qty++;
@@ -27,3 +28,30 @@ function submitValue(){
     return false;
   }
 }
+
+
+function validateCardNumber(ccNum)
+{
+  var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+  if(ccNum.value.match(cardno))
+        {
+      return true;
+        }
+      else
+        {
+        alert("Not a valid Visa credit card number!");
+        return false;
+        }
+}
+
+function printPage()
+{
+  window.print();
+}
+
+
+
+
+/*
+Visa cards numbers begin with the number 4 and have 13 - 16 digits inside (and optional spaces).
+*/
