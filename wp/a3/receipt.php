@@ -3,7 +3,12 @@
   include_once('tools.php');
 
   topModule('Assignment 3');
-  $name = $_SESSION
+  $name = $_SESSION['firstname'] . " " . $_SESSION['middlename'] . " " . $_SESSION['lastname'];
+  $email = $_SESSION['email'];
+  $address = $_SESSION['address'];
+  $city = $_SESSION['city'];
+  $zip = $_SESSION["zip"];
+  $contactdetails = $_SESSION["number"];
 ?>
 
     <div class ="layout">

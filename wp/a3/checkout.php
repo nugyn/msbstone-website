@@ -1,26 +1,85 @@
+
+
 <?php
   session_start();
   include_once('tools.php');
 
   topModule('Assignment 3');
 
-if(isset($_POST['checkout']))
-{
-  $_SESSION["firstname"] = $_POST["firstname"];
-  $_SESSION["lastname"] = $_POST["middlename"];
-  $_SESSION["firstname"] = $_POST["lastname"];
-  $_SESSION["firstname"] = $_POST["email"];
-  $_SESSION["firstname"] = $_POST["address"];
-  $_SESSION["firstname"] = $_POST["city"];
-  $_SESSION["firstname"] = $_POST["state"];
-  $_SESSION["zip"] = $_POST["zip"];
-  $_SESSION["number"] = $_POST["number"];
-  header("Location: receipt.php");
+ ?>
+ <?php
+// define variables and set to empty values
+$nameErr = $emailErr = $addressErr = $cityErr  = $stateErr = $postcodeErr = $mobNumErr = $expDateErr = " ";
+$firstname = $middlename = $lastname = $email = $address = $city = $state = $postcode = $mobNum = $expDate = " ";
 
+$amtError = 0;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
+      $firstname = cleanup($_POST["firstname"]);
+      if (!preg_match("/^[a-zA-Z ]*$/",$name))
+      {
+        $nameErr = "Only letters and white space allowed";
+        $amtError++;
+      }
+
+      $middlename = cleanup($_POST["middlename"]);
+      if (!preg_match("/^[a-zA-Z ]*$/",$name))
+      {
+        $nameErr = "Only letters and white space allowed";
+        $amtError++;
+      }
+
+      $lastname = cleanup($_POST["lastname"]);
+      if (!preg_match("/^[a-zA-Z ]*$/",$name))
+      {
+        $nameErr = "Only letters and white space allowed";
+        $amtError++;
+      }
+
+      $address = cleanup($_POST["address"]);
+      if(!preg_match('/^[a-zA-Z]+[a-zA-Z0-9._]+$/', $name))
+      {
+        $addressErr = "Invalid Address";
+        $amtError++;
+      }
+
+      $email = cleanup($_POST["email"]);
+      // check if e-mail address is well-formed
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "Invalid email format";
+        $amtError++;
+      }
+
+}/***/
+
+if($amtError ==  0)
+{
+  if(isset($_POST['submit']))
+  {
+      $_SESSION["firstname"] = $_POST["firstname"];
+      $_SESSION["middlename"] =  $_POST["middlename"];
+      $_SESSION["lastname"] = $_POST["lastname"];
+      $_SESSION["email"] = $_POST["email"];
+      $_SESSION["address"] = $_POST["address"];
+      $_SESSION["city"] = $_POST["city"];
+      $_SESSION["zip"] = $_POST["postcode"];
+      $_SESSION["number"] = $_POST["number"];
+     header("Location: receipt.php");
+  }
 }
 
 
- ?>
+function cleanup($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
+
+
 
     <div class ="layout">
       <section class="grid">
@@ -28,28 +87,43 @@ if(isset($_POST['checkout']))
           <div class="row">
     <div class="col-75">
       <div class="container">
-        <form name = "form" action="/action_page.php" method="post">
+        <form method="post" action="<?PHP echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 
           <div class="row">
             <div class="col-50">
               <h3>Billing Address</h3>
-              <label for="fname"><i class="fa fa-user"></i> First Name</label>
+              <br><label for="fname"><i class="fa fa-user"></i> First Name</label>
               <input type="text" id="fname" name="firstname" placeholder="Enter in Firstname" required>
-              <label for="fname"><i class="fa fa-user"></i> Middle Name</label>
-              <input type="text" id="fname" name="middlename" placeholder="Enter in Middlename">
-              <label for="fname"><i class="fa fa-user"></i> Last Name</label>
-              <input type="text" id="fname" name="lastname" placeholder="Enter in Firstname" required>
-              <label for="email"><i class="fa fa-envelope"></i> Email</label>
-              <input type="text" id="email" name="email" placeholder="example@example.com" required>
-              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-              <input type="text" id="adr" name="address" placeholder="123 Street St" required>
-              <label for="city"><i class="fa fa-institution"></i> City</label>
-              <input type="text" id="city" name="city" placeholder="City" required>
+              <span class = "error">*<?php echo $nameErr; ?></br>
 
-              <div class="row">
+              <br><label for="fname"><i class="fa fa-user"></i> Middle Name</label>
+              <input type="text" id="fname" name="middlename" placeholder="Enter in Middlename">
+              <span class = "error">*<?php echo $nameErr; ?></br>
+
+            <br><label for="fname"><i class="fa fa-user"></i> Last Name</label>
+              <input type="text" id="fname" name="lastname" placeholder="Enter in Firstname" >
+              <span class = "error">*<?php echo $nameErr; ?></br>
+
+            <br>  <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input type="text" id="email" name="email" placeholder="example@example.com" required>
+              <span class = "error">*<?php echo $emailErr; ?></br>
+
+              <br><label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+              <input type="text" id="adr" name="address" placeholder="123 Street St" required>
+              <span class = "error">*<?php echo $addressErr; ?></br>
+
+              <br><label for="city"><i class="fa fa-institution"></i> City</label>
+              <input type="text" id="city" name="city" placeholder="City" required>
+              <span class = "error">*<?php echo $cityErr; ?></br>
+
+            <br>  <label for="mobilenumber"><i class="fa fa-institution"></i> Mobile Number</label>
+              <input type="text" id="mobilenumber" name="mobilenumber" placeholder="+61 000 000 000">
+              <span class ="error">*<?php echo $mobileNumberErr; ?></br>
+
+
+              <br><div class="row">
                 <div class="col-50">
                   <label for="state">State</label>
-                  <input type="text" id="state" name="state" placeholder="State" required>
                   <select id=state required>
                     <option value="VIC"> Victoria </option>
                     <option value="NSW"> New South Wales </option>
@@ -58,32 +132,24 @@ if(isset($_POST['checkout']))
                     <option value="WA"> Western Australia</option>
                     <option value="SA"> South Australia</option>
                   </select>
-                </div>
-                <div class="col-50">
+                </div></br>
+            <div class="col-50">
                   <label for="zip">Postcode</label>
-                  <input type="text" id="postcode" name="postcode" placeholder="0000" required>
-                </div>
+                  <input type="text" id="postcode" name="postcode" placeholder="0000">
+                </div></br>
               </div>
             </div>
-
-
-
             <div class="col-50">
               <h3>Payment</h3>
-              <label for="fname">Accepted Cards</label>
+              <label for="fname">Accepted Cards: VISA</label>
               <div class="icon-container">
               <i class="fa fa-cc-visa" style="color:navy;"></i>
-              </div>
+            </div>
+              <br><label for="cname">Name on Card <abbr title="Required">*</abbr></label>
+              <input type="text" id="cname" name="cardname" placeholder="Cardholder Name"</br>
 
-
-
-
-
-              <label for="cname">Name on Card <abbr title="Required">*</abbr></label>
-              <input type="text" id="cname" name="cardname" placeholder="Cardholder Name" required>
-
-            <label for="ccNum">Card Number <abbr title="Required">*</abbr></label>
-            <input type="text" name="cardnumber" value="123" onchange= "validateCardNumber(document.form.cardnumber)">
+          <br><label for="ccNum">Card Number <abbr title="Required">*</abbr></label>
+            <input type="text" name="cardnumber" value="123" onchange= "validateCardNumber(document.form.cardnumber)"></br>
 
           <script>
           function validateCardNumber(val)
@@ -120,7 +186,7 @@ if(isset($_POST['checkout']))
           <label>
             <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
           </label>
-          <input type="submit" value="Continue to checkout" class="btn">
+          <input type="submit" name="submit" value="Continue to checkout" class="btn">
         </form>
 
       </div>
