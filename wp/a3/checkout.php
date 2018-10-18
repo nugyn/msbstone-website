@@ -17,28 +17,28 @@ $amtError = 0;
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
       $firstname = cleanup($_POST["firstname"]);
-      if (!preg_match("/^[a-zA-Z ]*$/",$name))
+      if (!preg_match("/^[a-zA-Z ]*$/",$firstname))
       {
         $nameErr = "Only letters and white space allowed";
         $amtError++;
       }
 
       $middlename = cleanup($_POST["middlename"]);
-      if (!preg_match("/^[a-zA-Z ]*$/",$name))
+      if (!preg_match("/^[a-zA-Z ]*$/",$middlename))
       {
         $nameErr = "Only letters and white space allowed";
         $amtError++;
       }
 
       $lastname = cleanup($_POST["lastname"]);
-      if (!preg_match("/^[a-zA-Z ]*$/",$name))
+      if (!preg_match("/^[a-zA-Z ]*$/",$lastname))
       {
         $nameErr = "Only letters and white space allowed";
         $amtError++;
       }
 
       $address = cleanup($_POST["address"]);
-      if(!preg_match('/^[a-zA-Z]+[a-zA-Z0-9._]+$/', $name))
+      if(preg_match('/^[a-zA-Z]+[a-zA-Z0-9._]+$/', $address))
       {
         $addressErr = "Invalid Address";
         $amtError++;
@@ -63,7 +63,7 @@ if($amtError ==  0)
       $_SESSION["email"] = $_POST["email"];
       $_SESSION["address"] = $_POST["address"];
       $_SESSION["city"] = $_POST["city"];
-      $_SESSION["zip"] = $_POST["postcode"];
+      $_SESSION["postcode"] = $_POST["postcode"];
       $_SESSION["number"] = $_POST["number"];
      header("Location: receipt.php");
   }

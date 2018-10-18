@@ -3,6 +3,7 @@
   include_once('tools.php');
 
   topModule('Assignment 3');
+
   $name = $_SESSION['firstname'] . " " . $_SESSION['middlename'] . " " . $_SESSION['lastname'];
   $email = $_SESSION['email'];
   $address = $_SESSION['address'];
@@ -19,15 +20,12 @@
           <p> 13 Fake St, Fake, 0000</p>
           <p>T: 0000 0000 M: 0000 000 000</p>
           <p>E: fake@email.com</p>
-         <?php echo
-          <h1>Invoice <br></h1>
-          Shipped to:<br>
-          <i>  $name </i> <br>
-          <i>< $address</i>  <br>
-          <i> $city </i> <br>
-          <i> $zip</i>  <br>
-          <i> "+614  " . $contactdetails</i><br>
-          <i>$email</i> ?>
+          <i><?php echo $name ?> </i> <br>
+          <i><?php echo $address?></i>  <br>
+          <i><?php echo $city?> </i> <br>
+          <i><?php echo $zip?></i>  <br>
+          <i><?php echo "+614  " . $contactdetails?></i><br>
+          <i><?php echo $email?></i>
 
           </article>
           <article>
