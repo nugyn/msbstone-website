@@ -17,8 +17,7 @@
   }
 
   else {
-    preShow(productCheck($productInput, $_GET['id']));
-    header('Location: services.php');
+     header('Location: services.php');
   }
 
 
@@ -27,7 +26,7 @@
     <div class ="layout">
       <section class="grid">
         <article class="grid-content">
-          <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php" method="post" onsubmit="return submitValue();">
+          <form action="cart.php" method="post" onsubmit="return submitValue();">
             <table>
               <tr><td class="servicetd">Product Name: </td>
                 <td class="alignRight"><?php echo $productName; ?> </td></tr>
@@ -52,7 +51,7 @@
 
             <tr><td></td>
               <td class="allignRight">
-              <input type="submit" value="Add to cart" class="submitButton"></td></tr>
+              <input type="submit" id="add" name="add" value="Add to cart" class="submitButton"></td></tr>
         </table>
         </form>
         </article>

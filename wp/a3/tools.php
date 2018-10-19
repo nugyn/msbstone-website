@@ -23,6 +23,7 @@
       <ul>
         <li><a href=index.php>Home</a></li>
         <li><a href=services.php>Services</a></li>
+        <li><a href=cart.php>Cart</a></li>
         <li><a href=login.php>Members</a></li>
       </ul>
     </nav>
@@ -109,6 +110,29 @@ function productCheck($array, $getvalue){
   for($i = 0; $i < $key; $i++ ){
     if($array[$i]["ID"] == $getvalue ){
       $k = 1;
+    }
+  }
+
+  if ($k == 1){
+    $var = True;
+  }
+  else if($k == -1) {
+    $var = False;
+  }
+
+  return $var;
+}
+
+
+function productCheckOption($array, $getvalue,$option){
+  $k = -1;
+
+  $key = count(array_keys($array));
+  for($i = 0; $i < $key; $i++ ){
+    if($array[$i]["ID"] == $getvalue ){
+      if($array[$i]["OID"] == $option) {
+        $k = 1;
+      }
     }
   }
 
