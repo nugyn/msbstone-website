@@ -3,6 +3,26 @@
   session_start();
   include_once('tools.php');
   topModule('Assignment 3');
+  $productInput = readProducts('services.txt');
+
+  if(isset($_GET['id']) && productCheck($productInput, $_GET['id']) ){
+
+    preShow(productCheck($productInput, $_GET['id']));
+
+  $productID = productValue($productInput, $_GET['id'],"ID");
+  $productName = productValue($productInput, $_GET['id'],"Title");
+  $productPrice = productValue($productInput, $_GET['id'],"Price");
+  $productDescription = productValue($productInput, $_GET['id'],"Description");
+  $productOptions = productOption($productInput, $_GET['id']);
+  }
+
+  else {
+    preShow(productCheck($productInput, $_GET['id']));
+    header('Location: services.php');
+  }
+
+
+
 ?>
     <div class ="layout">
       <section class="grid">
@@ -10,22 +30,25 @@
           <form action="https://titan.csit.rmit.edu.au/~e54061/wp/processing.php" method="post" onsubmit="return submitValue();">
             <table>
               <tr><td class="servicetd">Product Name: </td>
-                <td class="alignRight">Marble Stone</td></tr>
-             <input type="text" value="marblestone" id="id" name="id" hidden>
+                <td class="alignRight"><?php echo $productName; ?> </td></tr>
+             <input type="text" value="<?php echo $productID; ?>" id="id" name="id" hidden>
 
              <tr><td class="servicetd"><label for="option">Color: </label></td>
               <td class="alignRight"><select id="option" name="option" style="font-style: italic;">
-          <option value="eminentwhitepearl" >Eminent White Pearl</option>
-          <option value="liquidplatinum" >Liquid Platinum</option>
-          <option value="nebulagraypearl">Nebula Gray Pearl</option>
+                <?php
+                foreach ($productOptions as $key => $value) {
+                echo "<option value=" , $key , ">" , $value , "</option>";
+                }
+                ?>
+
         </select></td></tr>
         <tr><td class="servicetd">Quantity: </td>
     <td class="alignRight">
-	<input type="button" class="qtybutton" value="-" onclick="minus()">
-   <label for="qty"><input type="text" class="qtyfield" value="1" id="qty" name="qty" onsubmit="checkinput()"></label>
-  <input type="button" class="qtybutton" value="+" onclick="plus()"></td></tr>
+	<input type="button" class="qtybutton" value="-" onclick="minus() ; updatePrice()">
+   <label for="qty"><input type="text" class="qtyfield" value="1" id="qty" name="qty" onsubmit="checkinput()" oninput="updatePrice()"></label>
+  <input type="button" class="qtybutton" value="+" onclick="plus() ;  updatePrice()"></td></tr>
             <tr><td class="servicetd">Price: </td>
-            <td class="alignRight">$300.00 (for a standard kitchen)</td></tr>
+            <td class="alignRight">$<span id="pricechange"><?php echo $productPrice; ?></span></td></tr>
 
             <tr><td></td>
               <td class="allignRight">
@@ -34,9 +57,25 @@
         </form>
         </article>
         <script type="text/javascript" src="script.js"></script>
-        <article class="grid-content"><img src='../../media/MSBStone-img(3).jpg' alt= "Stonebench with Eminent White Pearl color"></article>
         <article class="grid-content">
-        <span class="descriptionText"><b>Description: </b> Crafted from one of the most precious marble stones under the artistic hands of our crafting master, this kitchen bench model will lighten up your family kitchen with a bright and shiny texture.</span>
+          <?php
+          if($productID == "ms"){
+            echo "<img src='../../media/MSBStone-img(3).jpg'>";
+          }
+          elseif ($productID == "csk") {
+            echo "<img src='../../media/MSBClassic.jpg'>";
+          }
+          elseif ($productID == "ml"){
+              echo "<img src='../../media/MSBModern.jpg'>";
+          }
+          elseif ($productID == "lwk"){
+            echo "<img src='../../media/MSBWood.jpg'>";
+          }
+           ?>
+
+        </article>
+        <article class="grid-content">
+        <span class="descriptionText"><b>Description: </b><?php echo $productDescription; ?> </span>
         </article>
       </section>
 
@@ -44,5 +83,5 @@
   </div>
   <?php
     endModule();
-    
+
   ?>

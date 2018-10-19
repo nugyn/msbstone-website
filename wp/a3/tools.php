@@ -1,4 +1,5 @@
 <?php
+
   function topModule($pageTitle) {
     $output = <<<"ASSIGNMENT3"
     <!DOCTYPE html>
@@ -8,7 +9,7 @@
     <meta charset="utf-8">
     <title>$pageTitle</title>
 
-    <!-- Keep wireframe.css for debugging, add your css to style.css -->
+    <!-- Keep wireframe.css for debugging, add you  r css to style.css -->
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
     <link id='stylecss' type="text/css" rel="stylesheet" href="css/style.css">
     <script src='../wireframe.js'></script>
@@ -53,6 +54,74 @@ ASSIGNMENT3FOOT;
       echo $outputfoot;
   }
 
+  function readProducts($filename) {
+    $fp = fopen($filename, "r");
+    flock($fp, LOCK_SH);
+    $headings = fgetcsv($fp, 0, "\t");
+
+    while ($aLineOfCells = fgetcsv($fp, 0, "\t")) {
+        $lala = $aLineOfCells;
+        $productList[] = array_combine($headings,$lala) ;
+    }
+
+    flock($fp, LOCK_UN);
+    fclose($fp);
+    return $productList;
+
+    }
+
+
+  function productValue($array, $getvalue, $stuff){
+      $result = "";
+      $key = count(array_keys($array));
+      for($i = 0; $i < $key; $i++ ){
+        if($array[$i]["ID"] == $getvalue ){
+          $result = $array[$i][$stuff];
+        }
+      }
+      return $result;
+    }
+
+    function productOption($array, $getvalue){
+        $options = array();
+        $key = count(array_keys($array));
+        for($i = 0; $i < $key; $i++ ){
+          if($array[$i]["ID"] == $getvalue ){
+            array_push($options,$array[$i]["Option"] ) ;
+          }
+        }
+
+        $optionIds = array();
+        for($i = 0; $i < $key; $i++ ){
+          if($array[$i]["ID"] == $getvalue ){
+            array_push($optionIds,$array[$i]["OID"] ) ;
+          }
+        }
+
+        $result = array_combine($optionIds,$options);
+        return $result;
+      }
+
+function productCheck($array, $getvalue){
+  $k = -1;
+
+  $key = count(array_keys($array));
+  for($i = 0; $i < $key; $i++ ){
+    if($array[$i]["ID"] == $getvalue ){
+      $k = 1;
+    }
+  }
+
+  if ($k == 1){
+    $var = True;
+  }
+  else if($k == -1) {
+    $var = False;
+  }
+
+  return $var;
+}
+
   function preShow( $arr, $returnAsString=false ) {
   $ret  = '<pre>' . print_r($arr, true) . '</pre>';
   if ($returnAsString)
@@ -87,6 +156,7 @@ function styleCurrentNavLink( $css ) {
   $filename = $bits[count($bits)-1];
   echo "<style>nav a[href$='$filename'] { $css }</style>";
 }
+
 
 
 ?>

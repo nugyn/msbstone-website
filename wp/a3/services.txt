@@ -1,0 +1,13 @@
+ID	OID	Title	Description	Option	Price
+ms	eminentwhitepearl	Marble Stone	Marble Stone with Eminent White Pearl color	Eminent White Pearl	300.00
+ms	liquidplatinum	Marble Stone	Marble Stone with Liquid Platinum color	Liquid Platinum	300.00
+ms	nebulagraypearl	Marble Stone	Marble Stone with Nebula Gray Pearl color	Nebula Gray Pearl	300.00
+csk	eminentwhitepearl	Classic Styled Kitchen	Classic Styled Kitchen with Eminent White Pearl color	Eminent White Pearl	400.00
+csk	liquidplatinum	Classic Styled Kitchen	Classic Styled Kitchen with Liquid Platinum color	Liquid Platinum	400.00
+csk	nebulagraypearl	Classic Styled Kitchen	Classic Styled Kitchen With Nebula Gray color	Nebula Gray Pearl	400.00
+ml	eminentwhitepearl	Modern Lifestyle	Modern Lifestyle with Eminent White Pearl color	Eminent White Pearl	500.00
+ml	liquidplatinum	Modern Lifestyle	Modern Lifestyle with Liquid Platinum color	Liquid Platinum	500.00
+ml	nebulagraypearl	Modern Lifestyle	Modern Lifestyle with Nebula Gray Pearl color	Nebula Gray Pearl	500.00
+lwk	eminentwhitepearl	Luxurious Wooden Kitchen	Luxurious Wooden Kitchen with Eminent White Pearl color	Eminent White Pearl	600.00
+lwk	liquidplatinum	Luxurious Wooden Kitchen	Luxurious Wooden Kitchen with Liquid Platinum color	Liquid Platinum	600.00
+lwk	nebulagraypearl	Luxurious Wooden Kitchen	Luxurious Wooden Kitchen with Nebula Gray Pearl color	Nebula Gray Pearl	600.00
