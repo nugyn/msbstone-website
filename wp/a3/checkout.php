@@ -57,6 +57,20 @@ if($amtError ==  0)
 {
   if(isset($_POST['submit']))
   {
+    $data = $_POST['field1'] . '-' . $_POST['field2'] . "\r\n";
+    $ret = file_put_contents('/orders.txt', $data, FILE_APPEND | LOCK_EX);
+    if($ret === false) {
+        die('There was an error writing this file');
+    }
+    else {
+        echo "$ret bytes written to file";
+    }
+     }
+else
+{
+   die('no post data to process');
+}
+
       $_SESSION["firstname"] = $_POST["firstname"];
       $_SESSION["middlename"] =  $_POST["middlename"];
       $_SESSION["lastname"] = $_POST["lastname"];
@@ -66,7 +80,8 @@ if($amtError ==  0)
       $_SESSION["postcode"] = $_POST["postcode"];
       $_SESSION["number"] = $_POST["number"];
      header("Location: receipt.php");
-  }
+
+
 }
 
 
@@ -77,6 +92,7 @@ function cleanup($data) {
   return $data;
 }
 ?>
+
 
 
 
