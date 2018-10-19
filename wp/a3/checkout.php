@@ -103,7 +103,7 @@ function cleanup($data) {
           <div class="row">
     <div class="col-75">
       <div class="container">
-        <form method="post" action="<?PHP echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+        <form name = "form" method="post" action="<?PHP echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 
           <div class="row">
             <div class="col-50">
