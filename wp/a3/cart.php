@@ -8,13 +8,14 @@
 {
     unset($_SESSION['cart']);
     unset($_SESSION['price']);
+    $_SESSION['price'] = 0.00;
     header("Location: services.php");
 }
 
   if(empty($_SESSION['cart']))
  {
      $_SESSION['cart'] = array();
-     $_SESSION['price'];
+     $_SESSION['price'] = 0.00;
 
  }
 
@@ -94,7 +95,7 @@
 
                 <div class="cart">
 
-                      <p class="overall">TOTAL: $ <?php echo $_SESSION['price'] ?> </p>
+                      <p class="overall">TOTAL: $ <?php echo number_format((float)$_SESSION['price'], 2, '.', '');  ?> </p>
 
                   <div class="leftcart">
                        <form action="cart.php" method="post">

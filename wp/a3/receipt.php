@@ -49,12 +49,6 @@
 
         							</tr>
 
-        							<tr class="service">
-        								<td class="tableitem"><p class="itemtext">Communication</p></td>
-        								<td class="tableitem"><p class="itemtext">5</p></td>
-        								<td class="tableitem"><p class="itemtext">$375.00</p></td>
-        							</tr>
-
         						<?php
                       foreach ($_SESSION['cart'] as $product) {
                         echo "<tr class='service'>";
