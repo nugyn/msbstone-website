@@ -3,8 +3,8 @@
 <?php
   session_start();
   include_once('tools.php');
+  error_reporting(0);
 
-  topModule('Assignment 3');
 
  ?>
  <?php
@@ -16,6 +16,16 @@ $amtError = 0;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
+    if(isset($_POST['purchaseDate'])){
+      $expDate = strtotime("01-".$_POST['expmonth']."-".$_POST['expyear']);
+      $minDate = strtotime('+1 month', strtotime($_POST['purchaseDate']));
+
+      if($expDate < $minDate ){
+        $expDateErr = "Card cannot be expired within 1 month";
+        $amtError++;
+      }
+    }
+
       $firstname = cleanup($_POST["firstname"]);
       if (!preg_match("/^[a-zA-Z ]*$/",$firstname))
       {
@@ -44,12 +54,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $amtError++;
       }
 
+
       $email = cleanup($_POST["email"]);
       // check if e-mail address is well-formed
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $emailErr = "Invalid email format";
         $amtError++;
       }
+
 
 
 }/***/
@@ -101,6 +113,7 @@ function cleanup($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
+  topModule('Assignment 3');
 ?>
 
 
@@ -133,7 +146,7 @@ function cleanup($data) {
 
             <br>  <label for="email"><i class="fa fa-envelope"></i> Email</label>
               <input type="text" id="email" name="email" placeholder="example@example.com" required>
-              <span class = "error">*<?php echo $emailErr; ?></br>
+              <span class = "error">*<?php echo $emailErr; ?></span></br>
 
               <br><label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
               <input type="text" id="adr" name="address" placeholder="123 Street St" required>
@@ -201,6 +214,7 @@ function cleanup($data) {
                 <div class="col-50">
                   <label for="expyear">Exp Year</label>
                   <input type="text" id="expyear" name="expyear" placeholder="2018">
+                  <span class = "error">*<?php echo $expDateErr; ?></span>
                 </div>
                 <div class="col-50">
                   <label for="cvv">CVV</label>

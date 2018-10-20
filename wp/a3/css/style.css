@@ -485,6 +485,9 @@ td{
   margin-top: 5mm;
 }
 
+.error {
+  color: red;
+}
 
 
 }
