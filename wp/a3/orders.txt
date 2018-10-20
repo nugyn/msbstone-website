@@ -1,1 +1,6 @@
-Date	Name	Email	Mobile	Address	PID	OID	Quantity	Unit Price	Sub Total
+Purchase Date	Name	Address	Mobile	Email	ID	OID	Quantity	Unit Price	Subtotal
+
+20.10.18	Lam Hoang Tran	6 McIvor Rd St Albans 3021	lamtran1030@gmail.com	csk	eminentwhitepearl	10	400	$4000.00
+20.10.18	Lam Hoang Tran	6 McIvor Rd St Albans 3021	lamtran1030@gmail.com	csk	eminentwhitepearl	5	400	$2000.00
+20.10.18	Lam Hoang Tran	6 McIvor Rd St Albans 3021	lamtran1030@gmail.com	csk	eminentwhitepearl	10	400	$4000.00
+20.10.18	Lam Hoang Tran	6 McIvor Rd St Albans 3021	lamtran1030@gmail.com	csk	eminentwhitepearl	5	400	$2000.00

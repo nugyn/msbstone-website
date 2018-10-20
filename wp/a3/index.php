@@ -3,6 +3,7 @@
   include_once('tools.php');
 
   topModule('Assignment 3');
+
 ?>
 
     <div class ="layout">
@@ -49,5 +50,5 @@
 
   <?php
     endModule();
-    
+
   ?>
