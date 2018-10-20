@@ -35,3 +35,22 @@ function updatePrice(){
   document.getElementById("pricechange").innerHTML = final.toFixed(2);
 
 }
+
+function validateCardNumber(ccNum)
+{
+  var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+  if(ccNum.value.match(cardno))
+        {
+      return true;
+        }
+      else
+        {
+        alert("Not a valid Visa credit card number!");
+        return false;
+        }
+}
+
+function printPage()
+{
+  window.print();
+}

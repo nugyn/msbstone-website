@@ -2,6 +2,7 @@
   session_start();
   include_once('tools.php');
   $productInput = readProducts('services.txt');
+  $_SESSION['list'] =   $productInput ;
 
   if(isset($_POST['clear-cart']))
 {
@@ -29,14 +30,10 @@
             $productPrice = productValue($productInput, $_POST['id'],"Price") * $_POST['qty'];
             $formattedPrice = "$".number_format((float)$productPrice, 2, '.', '');
 
-
-
           $product = array("id" => $_POST['id'], "name" => $productName, "option" => $_POST['option'], "optionName" => $selectedOption, "qty" =>$_POST['qty'], "price" => $formattedPrice);
           $_SESSION['price'] += number_format((float)$productPrice, 2, '.', '');
           array_push($_SESSION['cart'],$product);
 
-
-print_r($sumArray);
         }
         else{
           echo "<script>
@@ -100,17 +97,21 @@ print_r($sumArray);
                       <p class="overall">TOTAL: $ <?php echo $_SESSION['price'] ?> </p>
 
                   <div class="leftcart">
-                       <form method="post">
+                       <form action="cart.php" method="post">
                             <input name="clear-cart" type=hidden value="clear-cart">
-                           <button type=submit id="clear" class="clearbutton" action="cart.php"> CLEAR CART </button>
-                        </form>
+                           <button type="submit" id="clear" class="clearbutton" > CLEAR CART </button>
+                        </input></form>
                         </div>
 
-                    </div>
-                    <div class="checkoutbutton">
-                        <a class="cobutton" href="checkout.php">PROCEED TO CHECKOUT</a>
-                    </div>
 
+
+                    <div class="checkoutbutton">
+                      <form action="checkout.php" method="post">
+                        <input name="checkout" type=hidden value="checkout">
+                        <button type="submit" id="checkout" class="cobutton" >PROCEED TO CHECKOUT</button>
+                      </form>
+                    </div>
+                  </div>
                 </section>
 
   <?php
